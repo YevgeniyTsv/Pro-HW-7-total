@@ -9,7 +9,7 @@
         // ЗАДАНИЯ ДЛЯ РАЗМИНКИ!!!!!!)))
 
         //+1) Есть обьект car! пробежаться по обьекту через for in и подсчитать количество свойств в обьекте, 
-
+        console.warn('1)');
         const car = {
             model: 'BMW',
             price: 45000,
@@ -21,10 +21,11 @@
         for (let key in car) {
             cauntCar++
         }
-        console.warn (cauntCar);
+        console.log (cauntCar);
 
         // +2) Есть функция getClaims которая прнимает массив из обьектов claims! Фунция должна вернуть массив только из тех
         // которые  имеют status Closed
+        console.warn('2)');
         claims = [
         {
             id: 1234,
@@ -70,17 +71,22 @@
             model: 'Bike',
             status: 'Closed'
         }];
+
         function getClaims(arr) {
             return arr.filter ((obj) => obj.status === 'Closed');
         }
-        console.warn(getClaims (claims));
+        console.log(getClaims (claims));
         
 
         //3) Дан массив arr! Необходимо найти самое большое по модулю!!! Решить минимум 2-мя способами!!!
-         const arr = [5, 6, 23, 64, -23, -92, 23, 3]
+        console.warn('3)');
+        const arr = [5, 6, 23, 64, -23, -92, 23, 3]
 
-        // 4) Используя claims переменную выше!! добавить свойство isClosed: true если status - Closed
-         
+       
+       
+       
+        // +4) Используя claims переменную выше!! добавить свойство isClosed: true если status - Closed
+        console.warn('4)');
          // function getNewClaims(array) {
         //     array.map(function(obj){
         //         if (obj.status === 'Closed'){
@@ -100,8 +106,14 @@
              console.log(claims);
 
 
-        // 5)  Есть массив arr1 отсортировать этот вложенный массив [5, 1, 7,3 ,4, 6]
+        // +5)  Есть массив arr1 отсортировать этот вложенный массив [5, 1, 7,3 ,4, 6]
         const arr1 = [ [5, 2, 5,1, [5, 1, 7,3 ,4, 6] ], 6, 23, 64, -23, -92, 23, 3]
+        
+        console.warn('5)');
+        arr1[0][4].sort((a,b) => a-b);
+             console.log(arr1);
+             
+
 
         // 6)  Есть массив arr2 разложить положительные в один массив а отрицательные в другой!!
         const arr2 = [ 5, 2, 5, -1,  6, -3, 64, -23, -92, 23, 3];

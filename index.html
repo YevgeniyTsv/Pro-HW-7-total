@@ -118,6 +118,12 @@
         // 6)  Есть массив arr2 разложить положительные в один массив а отрицательные в другой!!
         const arr2 = [ 5, 2, 5, -1,  6, -3, 64, -23, -92, 23, 3];
 
+        const arrPlus = arr2.filter(item => item > 0);
+        const arrMinus = arr2.filter(item => item < 0);
+        console.warn('6)');
+        console.log(`Positive values: [${arrPlus}]`);
+        console.log(`Negative values: [${arrMinus}]`);
+
         //7 Написать функцию которая принимает только поле array обьекта person и сортирует по убыванию по id и возвращает массив!!
         const person = {
             name: 'Vasia',

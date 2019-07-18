@@ -76,10 +76,28 @@
         console.warn(getClaims (claims));
         
 
-        //3) Дан массив arr! Необходимо найти самое большое по модулю!!! Решить минимум 2-мя способами!! Один из  них с помощью find!!
+        //3) Дан массив arr! Необходимо найти самое большое по модулю!!! Решить минимум 2-мя способами!!!
          const arr = [5, 6, 23, 64, -23, -92, 23, 3]
 
         // 4) Используя claims переменную выше!! добавить свойство isClosed: true если status - Closed
+         
+         // function getNewClaims(array) {
+        //     array.map(function(obj){
+        //         if (obj.status === 'Closed'){
+        //             obj.isClosed = true;
+        //             }
+                    
+        //     })
+        // }
+        //      getNewClaims(claims);
+        //      console.log(claims);
+
+             function getNewClaims(array) {
+            array.map (obj => obj.status === 'Closed' ?obj.isClosed = true:false)
+                  
+             }
+             getNewClaims(claims);
+             console.log(claims);
 
 
         // 5)  Есть массив arr1 отсортировать этот вложенный массив [5, 1, 7,3 ,4, 6]

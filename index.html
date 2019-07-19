@@ -1,153 +1,198 @@
 <html>
 
 <head>
-    <title>JAVASCRIPT HW3</title>
+    <title>JAVASCRIPT HW7</title>
 </head>
 
 <body>
     <script>
-        // ЗАДАНИЯ ДЛЯ РАЗМИНКИ!!!!!!)))
+        let taskNumber = 0;
 
+        console.warn(`Task # ${++taskNumber}`);
+
+        // ЗАДАНИЯ ДЛЯ РАЗМИНКИ!!!!!!)))
         //+1) Есть обьект car! пробежаться по обьекту через for in и подсчитать количество свойств в обьекте, 
-        console.warn('1)');
+
         const car = {
             model: 'BMW',
             price: 45000,
             year: 2019,
             country: 'Germany'
         };
-       
+
         let cauntCar = 0
         for (let key in car) {
             cauntCar++
         }
-        console.log (cauntCar);
-
+        console.log(cauntCar);
         // +2) Есть функция getClaims которая прнимает массив из обьектов claims! Фунция должна вернуть массив только из тех
         // которые  имеют status Closed
-        console.warn('2)');
-        claims = [
-        {
-            id: 1234,
-            model: 'MC7',
-            status: 'Open'
-        },
-        {
-            id: 3453,
-            model: 'MC7',
-            status: 'Open'
-        },
-        {
-            id: 6343,
-            model: 'Gran Tour',
-            status: 'Closed'
-        },
-        {
-            id: 7644,
-            status: 'In Progress'
-        },
-        {
-            id: 7686,
-            model: 'City Bike',
-            status: 'Closed'
-        },
-        {
-            id: 8356,
-            model: 'Bike',
-            status: 'Closed'
-        },
-        {
-            id: 9745,
-            model: 'Bicycle',
-            status: 'Closed'
-        },
-        {
-            id: 10253,
-            model: 'Bicycle',
-            status: 'Closed'
-        },
-        {
-            id: 14234,
-            model: 'Bike',
-            status: 'Closed'
-        }];
+        console.warn(`Task # ${++taskNumber}`);
 
+        claims = [
+            {
+                id: 1234,
+                model: 'MC7',
+                status: 'Open'
+            },
+            {
+                id: 3453,
+                model: 'MC7',
+                status: 'Open'
+            },
+            {
+                id: 6343,
+                model: 'Gran Tour',
+                status: 'Closed'
+            },
+            {
+                id: 7644,
+                status: 'In Progress'
+            },
+            {
+                id: 7686,
+                model: 'City Bike',
+                status: 'Closed'
+            },
+            {
+                id: 8356,
+                model: 'Bike',
+                status: 'Closed'
+            },
+            {
+                id: 9745,
+                model: 'Bicycle',
+                status: 'Closed'
+            },
+            {
+                id: 10253,
+                model: 'Bicycle',
+                status: 'Closed'
+            },
+            {
+                id: 14234,
+                model: 'Bike',
+                status: 'Closed'
+            }];
         function getClaims(arr) {
-            return arr.filter ((obj) => obj.status === 'Closed');
+            return arr.filter((obj) => obj.status === 'Closed');
         }
-        console.log(getClaims (claims));
-        
+        console.log(getClaims(claims));
 
         //3) Дан массив arr! Необходимо найти самое большое по модулю!!! Решить минимум 2-мя способами!!!
-        console.warn('3)');
-        const arr = [5, 6, 23, 64, -23, -92, 23, 3]
+        console.warn(`Task # ${++taskNumber}`);
+        const arr = [5, 6, 23, 64, -23, -92, 23, 3];
 
-       
-       
-       
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (Math.abs(arr[i]) > Math.abs(max)) {
+                max = arr[i];
+            }
+
+
+        }
+        console.log(max);
+
+
+        console.log(arr.reduce((a, c) => Math.abs(a) < Math.abs(c) ? c : a));
+
+
+
+
+        function sortMaxAbs(arr) {
+            arr.sort((a, b) => Math.abs(a) - Math.abs(b));
+            let sortMax = arr[arr.length - 1];
+            return sortMax
+        }
+        console.log(`Sort Max Modul: ${sortMaxAbs(arr)}`);
+
+        // console.log(
+        //     Math.abs(arr[0]) > Math.abs(arr[arr.length - 1]) ? arr[0] : arr[arr.length - 1]
+        // );
+
+
         // +4) Используя claims переменную выше!! добавить свойство isClosed: true если status - Closed
-        console.warn('4)');
-         // function getNewClaims(array) {
+        console.warn(`Task # ${++taskNumber}`);
+        // function getNewClaims(array) {
         //     array.map(function(obj){
         //         if (obj.status === 'Closed'){
         //             obj.isClosed = true;
         //             }
-                    
+
         //     })
         // }
         //      getNewClaims(claims);
         //      console.log(claims);
+        function getNewClaims(array) {
+            array.map(obj => obj.status === 'Closed' ? obj.isClosed = true : false)
 
-             function getNewClaims(array) {
-            array.map (obj => obj.status === 'Closed' ?obj.isClosed = true:false)
-                  
-             }
-             getNewClaims(claims);
-             console.log(claims);
-
-
+        }
+        getNewClaims(claims);
+        console.log(claims);
         // +5)  Есть массив arr1 отсортировать этот вложенный массив [5, 1, 7,3 ,4, 6]
-        const arr1 = [ [5, 2, 5,1, [5, 1, 7,3 ,4, 6] ], 6, 23, 64, -23, -92, 23, 3]
-        
-        console.warn('5)');
-        arr1[0][4].sort((a,b) => a-b);
-             console.log(arr1);
-             
+        console.warn(`Task # ${++taskNumber}`);
+        const arr1 = [[5, 2, 5, 1, [5, 1, 7, 3, 4, 6]], 6, 23, 64, -23, -92, 23, 3]
 
+
+        arr1[0][4].sort((a, b) => a - b);
+        console.log(arr1);
 
         // 6)  Есть массив arr2 разложить положительные в один массив а отрицательные в другой!!
-        const arr2 = [ 5, 2, 5, -1,  6, -3, 64, -23, -92, 23, 3];
-
+        console.warn(`Task # ${++taskNumber}`);
+        const arr2 = [5, 2, 5, -1, 6, -3, 64, -23, -92, 23, 3];
         const arrPlus = arr2.filter(item => item > 0);
         const arrMinus = arr2.filter(item => item < 0);
-        console.warn('6)');
+
         console.log(`Positive values: [${arrPlus}]`);
         console.log(`Negative values: [${arrMinus}]`);
 
         //7 Написать функцию которая принимает только поле array обьекта person и сортирует по убыванию по id и возвращает массив!!
+        console.warn(`Task # ${++taskNumber}`);
         const person = {
             name: 'Vasia',
             gender: 'male',
-            array: [{id: 1, name: 'Vasia'}, {id: 6, name: 'Boria'}, {id: 2, name: 'Petia'}, {id: 3, name: 'Misha'}] 
+            array: [{ id: 1, name: 'Vasia' }, { id: 6, name: 'Boria' }, { id: 2, name: 'Petia' }, { id: 3, name: 'Misha' }]
         };
-
-        function getPerson(/* деструтуризируем*/) {
-            //ваш код
+        function getPerson({ array }) {
+            return array.sort((a, b) => a.id - b.id);
         }
 
+        console.log('Sorted by id:', getPerson(person));
+
+
+
         //8 Написать функцию которая принимает массив arr3! И если среднее арифметическое всех меньше самого большого числа в массиве вернуть тру иначе фолс!!!
-        const arr3 = [ 5, 2, 5, -1,  6, 3, 64, 23, -92, 23, 3];
+        console.warn(`Task # ${++taskNumber}`);
+
+        const arr3 = [5, 2, 5, -1, 6, 3, 64, 23, -92, 23, 3];
+        function avarageArr(array) {
+            let len = array.length;
+            let max = Math.max(...array);
+            let avarage = array.reduce((a, b) => a + b) / len;
+            return avarage < max;
+        }
+
+        console.log(avarageArr(arr3));
+
+
 
         //9 Есть обьект claim вернуть конкатенация modelName, subject!
+        console.warn(`Task # ${++taskNumber}`);
         const claim = {
             id: 542354,
             subject: 'Bike',
             modelName: 'Mc7',
             modelId: 3213,
-            getModelNameAndSubject: () => {
+            getModelNameAndSubject: ({ subject, modelName }) => {
                 // вернуть modelName, subject
+                return subject + modelName;
             }
         };
+
+        console.log(claim.getModelNameAndSubject(claim));
+
+
+
     </script>
 </body>
 
